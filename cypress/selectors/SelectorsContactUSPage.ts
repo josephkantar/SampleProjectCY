@@ -4,7 +4,8 @@ export const contactPage={
     email:"[name='email']",
     commands:"textarea.feedback-input",
     submit:"[type='submit']",
-    verifyMessage:"h1"
+    verifyMessage:"h1",
+    errorMessage:"body"
     
 
 }

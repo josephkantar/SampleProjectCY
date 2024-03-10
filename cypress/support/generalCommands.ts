@@ -53,12 +53,10 @@ Cypress.Commands.add('dynamicWait',(selector)=>{
     cy.waitUntil(() => {
         return Cypress.$(selector).is(':visible')
       }, { timeout: 5000, interval: 1000 })
-
 })
 Cypress.Commands.add('visible',(selector)=>{
     cy.get(selector).should('be.visible')
 })
-
 Cypress.Commands.add('assertGetByText',(selector,text)=>{
     cy.get(selector).should('contain',text)
 })

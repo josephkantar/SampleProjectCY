@@ -22,8 +22,6 @@ import "./pomCommands"
 import 'cypress-plugin-api'
 import 'cypress-wait-until';
 import './youTubeCommands'
-import '../pagess/HomePage'
-import '../pagess/ContactUsPage'
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 
