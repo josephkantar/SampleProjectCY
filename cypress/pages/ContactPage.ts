@@ -35,5 +35,4 @@ verify_error_invalid_email_adress_message(){
 verify_error_all_fields_are_required_message(){
     cy.assertGetByText(contactPage.errorMessage," Error: all fields are required")
 }
-
 }
