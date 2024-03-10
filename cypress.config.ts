@@ -1,18 +1,17 @@
 import { defineConfig } from 'cypress';
-import allureWriter from '@shelex/cypress-allure-plugin/writer';
 
 export default defineConfig({
+	reporter: 'cypress-mochawesome-reporter',
 	e2e: {
 		baseUrl: 'https://sandbox-api.endolu.com',
 		video: true,
 		setupNodeEvents(on, config) {
-			allureWriter(on, config);
-			return config;
+			require('cypress-mochawesome-reporter/plugin')(on)
 		},
+		//includeShadowDom:true,
 		env: {
-			allure: true,
-			allureAttachRequests: true,
-			allureAddVideoOnPass: true,
-		},
+			snapshotOnly: true
+		  }
 	},
+
 });

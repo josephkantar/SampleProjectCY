@@ -15,6 +15,24 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
-import '@shelex/cypress-allure-plugin';
+import 'cypress-mochawesome-reporter/register'
+import 'cypress-iframe';
+import "./generalCommands"
+import "./pomCommands"
+import 'cypress-plugin-api'
+import 'cypress-wait-until';
+import './youTubeCommands'
+import '../pagess/HomePage'
+import '../pagess/ContactUsPage'
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+
+
+// Bu kod run anında gelen xhr fetch gibi işimize yaramayan apileri görememizi engelliyor
+const app = window.top
+if(!app.document.head.querySelector('[data-hide-command-log-request]')){
+    const style = app.document.createElement('style');
+    style.innerHTML = '.command-name-request, .command-name-xhr {display: none}';
+    style.setAttribute('data-hide-command-log-request','');
+    app.document.head.appendChild(style);
+}

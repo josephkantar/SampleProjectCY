@@ -45,6 +45,7 @@ it('Register By Email', () => {
 	registerByEmail.confirmUser(user)
 	.then((response)=>{
 		expect(response.status).to.be.equal(200);
+		
 	});
 });
 

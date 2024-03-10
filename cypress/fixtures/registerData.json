@@ -1,0 +1,10 @@
+{
+    "wrongPhoneNumber": {
+        "fazlaNumara":"123-852-98945",
+        "hatalıSıralama":"12-4567-4444",
+        "eksikNumara":"1234-333"
+    },
+    "ssn": "545-01-0017",
+    "username": "TechTeam111",
+    "password": "Ab142790"
+}

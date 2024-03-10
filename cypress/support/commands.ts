@@ -1,4 +1,6 @@
 /// <reference types="cypress" />
+import cypress = require('cypress');
+import 'cypress-iframe';
 // ***********************************************
 // This example commands.ts shows you how to
 // create various custom commands and overwrite
@@ -12,7 +14,6 @@
 //
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
-//
 //
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
@@ -35,3 +36,6 @@
 //     }
 //   }
 // }
+    
+    
+    

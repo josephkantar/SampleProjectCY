@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import GetSecurityCodeByEmailApi from '../api/login/GetSecurityCodeByEmailApi';
+
 
 export default class User {
     private email: string;
