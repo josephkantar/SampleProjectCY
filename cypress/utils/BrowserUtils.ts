@@ -5,7 +5,7 @@ export default class BrowserUtils{
         return cy.get(locate).its('0.contentDocument.body').then(cy.wrap);
     }
     handleTab(locate){
-        return cy.get(locate).invoke('removeAttr','target').click()
+        return cy.get(locate).invoke('removeAttr','target')
     }
     iframe2(locate){
         cy.get(locate).then($iframe=>{ // iframe içine girmek için wrap yöntemi

@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "cypress run",
-    "mocha": "cypress run --spec cypress/e2e --reporter mochawesome"
+    "mocha": "cypress run --spec cypress/e2e --reporter mochawesome",
+    "webDriver":"cypress run --spec cypress/e2e/webDriverExecise"
   },
   "keywords": [],
   "author": "",
