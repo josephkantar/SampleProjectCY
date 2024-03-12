@@ -20,5 +20,6 @@ export default class HomePagee{
         util.handleTab(homePage.login)//yeni sayfa açılmasını engelledik
         cy.clickk(homePage.login)
     }
+    
 }
 
