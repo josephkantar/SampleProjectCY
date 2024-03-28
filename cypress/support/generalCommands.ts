@@ -12,7 +12,8 @@ declare global {
             sendKeys(selector,data: string): Chainable<void>
             dynamicWait(selector:string): Chainable<void>
             assertGetByText(selector,text: string): Chainable<void>
-            visible(selector:string): Chainable<void>            
+            visible(selector:string): Chainable<void>   
+            alertMessage(): Chainable<void>          
         }
     }
 }
@@ -59,6 +60,11 @@ Cypress.Commands.add('visible',(selector)=>{
 })
 Cypress.Commands.add('assertGetByText',(selector,text)=>{
     cy.get(selector).should('contain',text)
+})
+Cypress.Commands.add("alertMessage",function(){
+    cy.on('window:alert',(alertText)=>{
+        expect(alertText).to.equal('validation failed')
+    })
 })
 
 

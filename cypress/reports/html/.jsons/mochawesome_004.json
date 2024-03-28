@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-03-27T21:32:15.539Z",
+    "end": "2024-03-27T21:32:22.244Z",
+    "duration": 6705,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "7cee8463-e945-4274-b6d7-af26b2d9bb52",
+      "title": "",
+      "fullFile": "cypress/e2e/dataDrivenUI(scholl mesaj gönderme).cy.ts",
+      "file": "cypress/e2e/dataDrivenUI(scholl mesaj gönderme).cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "71df9cb9-606f-4794-a4e9-1848c41a1695",
+          "title": "UI data driven",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "UI data driven",
+              "fullTitle": "UI data driven UI data driven",
+              "timedOut": null,
+              "duration": 1982,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress/e2e/dataDrivenUI(scholl mesaj gönderme).cy.ts\"\n}",
+              "code": "cy.visit('https://managementonschools.com/');\ncy.get('.justify-content-start > :nth-child(5)').click();\ncy.get('#name').type(testData.name);\ncy.get('#email').type(testData.email);\ncy.get('#subject').type(testData.subject);\ncy.get('#message').type(testData.message);\ncy.get('.fw-semibold').click();\ncy.get('.Toastify__toast-body > :nth-child(2)').should('contain', \"Message Created\");",
+              "err": {},
+              "uuid": "0fa75f81-61f6-4638-aa55-ba44065aafbb",
+              "parentUUID": "71df9cb9-606f-4794-a4e9-1848c41a1695",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "UI data driven",
+              "fullTitle": "UI data driven UI data driven",
+              "timedOut": null,
+              "duration": 1470,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress/e2e/dataDrivenUI(scholl mesaj gönderme).cy.ts\"\n}",
+              "code": "cy.visit('https://managementonschools.com/');\ncy.get('.justify-content-start > :nth-child(5)').click();\ncy.get('#name').type(testData.name);\ncy.get('#email').type(testData.email);\ncy.get('#subject').type(testData.subject);\ncy.get('#message').type(testData.message);\ncy.get('.fw-semibold').click();\ncy.get('.Toastify__toast-body > :nth-child(2)').should('contain', \"Message Created\");",
+              "err": {},
+              "uuid": "f7b0a8bb-c43a-4aea-bc97-c3cce6b2c317",
+              "parentUUID": "71df9cb9-606f-4794-a4e9-1848c41a1695",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "UI data driven",
+              "fullTitle": "UI data driven UI data driven",
+              "timedOut": null,
+              "duration": 1611,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress/e2e/dataDrivenUI(scholl mesaj gönderme).cy.ts\"\n}",
+              "code": "cy.visit('https://managementonschools.com/');\ncy.get('.justify-content-start > :nth-child(5)').click();\ncy.get('#name').type(testData.name);\ncy.get('#email').type(testData.email);\ncy.get('#subject').type(testData.subject);\ncy.get('#message').type(testData.message);\ncy.get('.fw-semibold').click();\ncy.get('.Toastify__toast-body > :nth-child(2)').should('contain', \"Message Created\");",
+              "err": {},
+              "uuid": "007ea7fb-2fc4-45af-8d80-67b25ef3ce19",
+              "parentUUID": "71df9cb9-606f-4794-a4e9-1848c41a1695",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0fa75f81-61f6-4638-aa55-ba44065aafbb",
+            "f7b0a8bb-c43a-4aea-bc97-c3cce6b2c317",
+            "007ea7fb-2fc4-45af-8d80-67b25ef3ce19"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5063,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

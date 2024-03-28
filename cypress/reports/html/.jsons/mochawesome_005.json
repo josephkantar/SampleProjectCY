@@ -1,0 +1,194 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 2,
+    "pending": 0,
+    "failures": 3,
+    "start": "2024-03-27T21:32:24.479Z",
+    "end": "2024-03-27T21:33:08.255Z",
+    "duration": 43776,
+    "testsRegistered": 5,
+    "passPercent": 40,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f30496e8-de04-41a8-bbde-4341deb4dd10",
+      "title": "",
+      "fullFile": "cypress/e2e/iframe.cy.ts",
+      "file": "cypress/e2e/iframe.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "455a5be3-2ecd-49d3-a3fa-75d92f665aae",
+          "title": "iframe",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "iframe içinde plugin yüklemeli button tıklatma ve kapatma",
+              "fullTitle": "iframe iframe içinde plugin yüklemeli button tıklatma ve kapatma",
+              "timedOut": null,
+              "duration": 3263,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress/e2e/iframe.cy.ts\"\n}",
+              "code": "cy.visit('http://www.webdriveruniversity.com/');\ncy.get('#iframe').scrollIntoView({ duration: 1500 }); //scrooll görmek için\ncy.get('#iframe').invoke('removeAttr', 'target').click();\n//cy.frameLoaded('#frame')\n//cy.iframe().find(\"button[type='button']\").click()\n//önce çalıştı şimdi çalışmıyor",
+              "err": {},
+              "uuid": "d2b3dc64-34cc-4dc7-aae8-bbd7c4d713a0",
+              "parentUUID": "455a5be3-2ecd-49d3-a3fa-75d92f665aae",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "2.yöntem iframe içinde button tıklama",
+              "fullTitle": "iframe 2.yöntem iframe içinde button tıklama",
+              "timedOut": null,
+              "duration": 6319,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-failed\",\n    \"value\": \"cypress/e2e/iframe.cy.ts\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"/iframe.cy.ts/iframe -- 2.yöntem iframe içinde button tıklama (failed).png\"\n      ],\n      [\n        \"/iframe.cy.ts/iframe -- 2.yöntem iframe içinde button tıklama (failed) (attempt 2).png\"\n      ]\n    ]\n  }\n]",
+              "code": "cy.visit('http://www.webdriveruniversity.com/');\ncy.get('#iframe').scrollIntoView({ duration: 1500 }); //scrooll görmek için\nutil.handleTab('#iframe'); // metod ile artık handleTab yaptım\n//cy.get('#iframe').invoke('removeAttr','target').click()\ncy.get('#frame').then(function ($iframe) {\n    var body = $iframe.contents().find('body');\n    cy.wrap(body).as('iframe');\n});\ncy.get('@iframe').find('#button-find-out-more').click();\ncy.get('@iframe').contains('Welcome to ').should('be.visible');\n//içine girdikten sonra her işlemde çağırma işlemini tekrarla",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#frame`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#frame`, but never found it.\n    at Context.eval (webpack://endolucypressts/./cypress/e2e/iframe.cy.ts:19:0)",
+                "diff": null
+              },
+              "uuid": "957504e6-2682-41f9-a7cb-9203b8300613",
+              "parentUUID": "455a5be3-2ecd-49d3-a3fa-75d92f665aae",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "iframe 3. yöntem cy.wrap daha kolay ve metoda çevrilebilir",
+              "fullTitle": "iframe iframe 3. yöntem cy.wrap daha kolay ve metoda çevrilebilir",
+              "timedOut": null,
+              "duration": 2608,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress/e2e/iframe.cy.ts\"\n}",
+              "code": "cy.visit('http://www.webdriveruniversity.com/');\ncy.get('#iframe').scrollIntoView({ duration: 1500 }); //scrooll görmek için\ncy.get('#iframe').invoke('removeAttr', 'target').click();\ncy.get('iframe#frame').its('0.contentDocument.body').then(cy.wrap) // bunu metoda döktük\n    .contains('Who Are We?').should('be.visible');",
+              "err": {},
+              "uuid": "fe4f7733-7904-47b9-9c67-4dc10035878c",
+              "parentUUID": "455a5be3-2ecd-49d3-a3fa-75d92f665aae",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "iframe içinde metodla gezinme",
+              "fullTitle": "iframe iframe içinde metodla gezinme",
+              "timedOut": null,
+              "duration": 5935,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-failed\",\n    \"value\": \"cypress/e2e/iframe.cy.ts\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"/iframe.cy.ts/iframe -- iframe içinde metodla gezinme (failed).png\"\n      ],\n      [\n        \"/iframe.cy.ts/iframe -- iframe içinde metodla gezinme (failed) (attempt 2).png\"\n      ]\n    ]\n  }\n]",
+              "code": "cy.visit('http://www.webdriveruniversity.com/');\ncy.get('#iframe').scrollIntoView({ duration: 1500 }); //scrooll görmek için\nutil.handleTab('#iframe');\nutil.iframe('#frame').contains('Find Out More!').click();\nutil.iframe('#frame').contains('Welcome to ').should('be.visible');\n//her adım için metodla devam et yani ben iframe içine girdim\n//her yerde gezinebilirim olayı yok seleniumda ki gibi \n//her adım öncesi metodu cağıracaksın",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#frame`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#frame`, but never found it.\n    at BrowserUtils.iframe (webpack://endolucypressts/./cypress/utils/BrowserUtils.ts:7:0)\n    at Context.eval (webpack://endolucypressts/./cypress/e2e/iframe.cy.ts:38:0)",
+                "diff": null
+              },
+              "uuid": "293afe1f-14bd-4cbb-b7d1-ccbeaf06e1c8",
+              "parentUUID": "455a5be3-2ecd-49d3-a3fa-75d92f665aae",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "2.yöntemin metodlu hali iframe2",
+              "fullTitle": "iframe 2.yöntemin metodlu hali iframe2",
+              "timedOut": null,
+              "duration": 6248,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-failed\",\n    \"value\": \"cypress/e2e/iframe.cy.ts\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"/iframe.cy.ts/iframe -- 2.yöntemin metodlu hali iframe2 (failed).png\"\n      ],\n      [\n        \"/iframe.cy.ts/iframe -- 2.yöntemin metodlu hali iframe2 (failed) (attempt 2).png\"\n      ]\n    ]\n  }\n]",
+              "code": "cy.visit('http://www.webdriveruniversity.com/');\ncy.get('#iframe').scrollIntoView({ duration: 1500 }); //scrooll görmek için\nutil.handleTab('#iframe');\nutil.iframe2('#frame').contains('Find Out More!').click();\nutil.iframe2('#frame').contains('Welcome to ').should('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#frame`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#frame`, but never found it.\n    at BrowserUtils.iframe2 (webpack://endolucypressts/./cypress/utils/BrowserUtils.ts:13:0)\n    at Context.eval (webpack://endolucypressts/./cypress/e2e/iframe.cy.ts:48:0)",
+                "diff": null
+              },
+              "uuid": "c6f1f5f7-788e-4d7a-aef9-e62c13522b1d",
+              "parentUUID": "455a5be3-2ecd-49d3-a3fa-75d92f665aae",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d2b3dc64-34cc-4dc7-aae8-bbd7c4d713a0",
+            "fe4f7733-7904-47b9-9c67-4dc10035878c"
+          ],
+          "failures": [
+            "957504e6-2682-41f9-a7cb-9203b8300613",
+            "293afe1f-14bd-4cbb-b7d1-ccbeaf06e1c8",
+            "c6f1f5f7-788e-4d7a-aef9-e62c13522b1d"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 24373,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

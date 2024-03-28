@@ -14,8 +14,9 @@ export default class LoginPage{
         cy.clickk(loginPage.loginButton)
     }
     verify_alert_message_validation_failed(){
-        cy.on('window:alert',(alertText)=>{
-            expect(alertText).to.equal('validation failed')
-        })
+        // cy.on('window:alert',(alertText)=>{
+        //     expect(alertText).to.equal('validation failed')
+        // })
+        cy.alertMessage()
     }   
 }

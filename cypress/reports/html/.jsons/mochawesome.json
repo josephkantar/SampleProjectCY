@@ -1,0 +1,162 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-03-27T21:31:11.774Z",
+    "end": "2024-03-27T21:31:22.210Z",
+    "duration": 10436,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ade4dbe3-ae0c-405b-ad66-de2925083a7e",
+      "title": "",
+      "fullFile": "cypress/e2e/api_ıntercept.cy.ts",
+      "file": "cypress/e2e/api_ıntercept.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "994c17b8-7ec5-4ae8-97f0-de36e34ef906",
+          "title": "Simple api intercept/spy api request",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "get comment",
+              "fullTitle": "Simple api intercept/spy api request get comment",
+              "timedOut": null,
+              "duration": 1311,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress/e2e/api_ıntercept.cy.ts\"\n}",
+              "code": "cy.visit('https://example.cypress.io/commands/network-requests');\n//sayfada işlem yapacağımız yeri tıklayıp şu gelene kadar status code 200 görene kadar bekle\n//dinamik wait yapmak için öncesinde cy.intercept ile kalıp haline sokuyoruz\ncy.intercept({\n    url: '**/comments/**', // tam url i vermedik öncesi ve sonrası belli olan comments ve alttaki örnekte sadece path ver\n    method: 'GET'\n}).as('comment'); //burda then should ile de devam edebilirdik as fonksiyonu güzel oluyor\n//as fonksiyonu sonrası istediğimiz yeri tik yapacağız ve as sayesinde wait i isteğidiğimiz gibi kullanırız\ncy.get('.network-btn').click();\n//yukarida her şeyi comment içine attık ve kullanırken @ ile birlikte\ncy.wait('@comment').then(function (comment) {\n    expect(comment.response.statusCode).to.be.eqls(200);\n    cy.log(comment.response.body);\n    expect(comment.response.body.body).include('enim'); // body içinde enim var doğrulaması yaptık\n});",
+              "err": {},
+              "uuid": "04bde8fd-b5c7-44b7-9344-419cd076fcd3",
+              "parentUUID": "994c17b8-7ec5-4ae8-97f0-de36e34ef906",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "get comment",
+              "fullTitle": "Simple api intercept/spy api request get comment",
+              "timedOut": null,
+              "duration": 380,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress/e2e/api_ıntercept.cy.ts\"\n}",
+              "code": "cy.visit('https://example.cypress.io/commands/network-requests');\ncy.intercept({\n    url: '**/comments/**',\n    method: 'GET'\n}).as('comment');\ncy.get('.network-btn').click();\n//yukarıdakinin farklı bir doğrulama yöntemi içine girmedin its metodu ile\ncy.wait('@comment').its('response.statusCode').should('be.oneOf', [200, 201]);",
+              "err": {},
+              "uuid": "2164532d-beda-44fd-8070-219e2a1c5493",
+              "parentUUID": "994c17b8-7ec5-4ae8-97f0-de36e34ef906",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "intercept/spy api",
+              "fullTitle": "Simple api intercept/spy api request intercept/spy api",
+              "timedOut": null,
+              "duration": 3190,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress/e2e/api_ıntercept.cy.ts\"\n}",
+              "code": "cy.visit('https://dummyapi.io/explorer');\ncy.intercept({\n    path: '/data/v1/post/60d21af267d0d8992e610b8d/comment?limit=10'\n}).as('comments');\ncy.get('.flex > :nth-child(5)').click();\ncy.wait('@comments').then(function (intercept) {\n    expect(intercept.response.body.limit).to.eqls(10);\n});",
+              "err": {},
+              "uuid": "629cb192-e56a-4eda-abfd-4cb7244a7daa",
+              "parentUUID": "994c17b8-7ec5-4ae8-97f0-de36e34ef906",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Mock api responese",
+              "fullTitle": "Simple api intercept/spy api request Mock api responese",
+              "timedOut": null,
+              "duration": 1302,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress/e2e/api_ıntercept.cy.ts\"\n}",
+              "code": "cy.visit('https://dummyapi.io/explorer');\ncy.intercept('GET', '/data/v1/post/60d21af267d0d8992e610b8d/comment?limit=10', { limit: 10, Name: 'Samet' }).as('comments');\ncy.get('.flex > :nth-child(5)').click();\ncy.wait('@comments').then(function (intercept) {\n    expect(intercept.response.body.limit).to.eqls(10);\n    expect(intercept.response.body.Name).to.eqls('Samet');\n});",
+              "err": {},
+              "uuid": "88e3cb64-993f-4af9-97ff-87e184fe299c",
+              "parentUUID": "994c17b8-7ec5-4ae8-97f0-de36e34ef906",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "04bde8fd-b5c7-44b7-9344-419cd076fcd3",
+            "2164532d-beda-44fd-8070-219e2a1c5493",
+            "629cb192-e56a-4eda-abfd-4cb7244a7daa",
+            "88e3cb64-993f-4af9-97ff-87e184fe299c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6183,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
